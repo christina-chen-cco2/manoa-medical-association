@@ -49,7 +49,7 @@ const RecordSearch = () => {
       <Input fluid icon='search' placeholder='Search' size='large'/>
       <p style={{ fontSize: '12px' }}>Search by name, SSN, DOB, or email.</p>
       <br/>
-      <Grid relaxed columns={3} style={{ overflowY: 'scroll', height: '60vh' }}>
+      <Grid relaxed columns={3} style={{ overflowY: 'auto', height: '60vh' }}>
         {rows.map(row => { return row; })}
       </Grid>
     </Container>

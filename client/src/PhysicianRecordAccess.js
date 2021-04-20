@@ -1,11 +1,67 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import {Container, Header, Form, Menu, Table, TextArea, Divider} from 'semantic-ui-react';
 
 const PhysicianRecordAccess = () => {
 
-  let activeItem = 'Examinations';
-  const setActiveTab = (name) => { activeItem = name; console.log(activeItem) };
+  const examPaneContent = (
+    <Container style={{ overflowY: 'auto', paddingRight: '2%', height: '60vh' }}>
+      <Header as='h2' textAlign='center'>Upcoming Examinations</Header>
+      <Header as='h4'>Date to Conduct: December 09, 1987</Header>
+      <Header as='h4'>Reason: Checkup</Header>
+      <Form>
+        <TextArea placeholder='Notes'/>
+      </Form>
+      <Header as='h4'>Date to Conduct: July 09, 1987</Header>
+      <Header as='h4'>Reason: Runny Nose</Header>
+      <Form>
+        <TextArea placeholder='Notes'/>
+      </Form>
+      <br/><br/>
+      <Divider hidden section/>
+      <Header as='h2' textAlign='center'>Past Examinations</Header>
+      <Header as='h4'>Date Conducted: December 09, 1987</Header>
+      <Header as='h4'>Reason: Checkup</Header>
+      <Form>
+        <TextArea placeholder='Notes'/>
+      </Form>
+      <Header as='h4'>Date Conducted: July 09, 1987</Header>
+      <Header as='h4'>Reason: Ear Infection</Header>
+      <Form>
+        <TextArea placeholder='Notes'/>
+      </Form>
+    </Container>
+  )
+
+  const [activeTab, setActiveTab] = useState('Examinations');
+  const [activePane, setActivePane] = useState(examPaneContent);
+
+  const setActiveItem = (tabName) => {
+    setActiveTab(tabName);
+    let paneContent;
+    if (tabName === 'Examinations') {
+      paneContent = examPaneContent;
+    } else if (tabName === 'Vaccinations') {
+      paneContent = (
+        <Container style={{ overflowY: 'auto', paddingRight: '2%', height: '60vh' }}>
+          <Header as='h4'>Vaccine: vaccinename1</Header>
+          <Header as='h4'>Date Administered: September 29, 1978</Header>
+          <Form>
+            <TextArea placeholder='Notes'/>
+          </Form>
+          <Divider/>
+          <Header as='h4'>Vaccine: vaccinename2</Header>
+          <Header as='h4'>Date Administered: February 29, 1978</Header>
+          <Form>
+            <TextArea placeholder='Notes'/>
+          </Form>
+        </Container>
+      )
+    } else if (tabName === 'Notes') {
+
+    }
+    setActivePane(paneContent);
+  };
 
   return (
     <Container>
@@ -58,29 +114,19 @@ const PhysicianRecordAccess = () => {
         <Menu.Item
           position='right'
           name='Examinations'
-          active={activeItem === 'Examinations'}
-          onClick={(event, data) => setActiveTab(data.name)}/>
+          active={activeTab === 'Examinations'}
+          onClick={(event, data) => setActiveItem(data.name)}/>
         <Menu.Item
           name='Vaccinations'
-          active={activeItem === 'Vaccinations'}
-          onClick={(event, data) => setActiveTab(data.name)}/>
+          active={activeTab === 'Vaccinations'}
+          onClick={(event, data) => setActiveItem(data.name)}/>
         <Menu.Item
           name='Notes'
-          active={activeItem === 'Notes'}
-          onClick={(event, data) => setActiveTab(data.name)}/>
+          active={activeTab === 'Notes'}
+          onClick={(event, data) => setActiveItem(data.name)}/>
       </Menu>
       <br/>
-      <Container>
-        <Header as='h4' textAlign='right'>December 09, 1987</Header>
-        <Form>
-          <TextArea placeholder='Notes'/>
-        </Form>
-        <Divider/>
-        <Header as='h4' textAlign='right'>July 09, 1987</Header>
-        <Form>
-          <TextArea placeholder='Notes'/>
-        </Form>
-      </Container>
+      {activePane}
     </Container>
   );
 }
