@@ -36,7 +36,7 @@ const PhysicianSignup = () => {
             <label>Create Password</label>
             <Input placeholder='Password' onChange={(event, data) => setPassword(data.value)}/>
           </Form.Field>
-          <Button floated='right' type='submit' fluid onClick={sendReq}>Create Account</Button>
+          <Button floated='right' type='submit' fluid onClick=''>Create Account</Button>
         </Form>
       </Container>
     </Container>
