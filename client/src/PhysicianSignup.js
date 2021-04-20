@@ -1,6 +1,6 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import {Form, Button, Container, Divider, Header, Input} from 'semantic-ui-react';
+import { Form, Button, Container, Divider, Header, Input } from 'semantic-ui-react';
 
 const PhysicianSignup = () => {
   const req = {};
@@ -12,7 +12,7 @@ const PhysicianSignup = () => {
 
   return (
     <Container>
-      <Container style={{ width: '75%' }}>
+      <Container>
         <Header textAlign='center' as='h2'>Create a Physician Account</Header>
         <Form>
           <Form.Field>

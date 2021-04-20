@@ -1,24 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import 'semantic-ui-css/semantic.min.css';
+import { Container } from 'semantic-ui-react';
 import './index.css';
-import PhysicianSignup from "./PhysicianSignup";
 import Navbar from "./Navbar";
+import PhysicianSignup from "./PhysicianSignup";
+import RecordSearch from "./RecordSearch";
+import PhysicianRecordAccess from "./PhysicianRecordAccess"
 
 ReactDOM.render(
   <Router>
     <Navbar/>
-    <Switch>
-      <Route exact path="/"/>
-      <Route exact path="/physician-signup" component={PhysicianSignup}/>
-      <Route exact path="/patient-signup"/>
-      <Route exact path="/physician-login"/>
-      <Route exact path="/patient-login"/>
-      <Route exact path="/record-search"/>
-      <Route exact path="/record-access"/>
-      <Route exact path="/record-upload"/>
-      <Route exact path="/my-profile"/>
-    </Switch>
+    <Container style={{ width: '85vw' }}>
+      <Switch>
+        <Route exact path="/"/>
+        <Route exact path="/physician-signup" component={PhysicianSignup}/>
+        <Route exact path="/patient-signup"/>
+        <Route exact path="/physician-login"/>
+        <Route exact path="/patient-login"/>
+        <Route exact path="/record-search" component={RecordSearch}/>
+        <Route exact path="/patient-record-access"/>
+        <Route exact path="/physician-record-access" component={PhysicianRecordAccess}/>
+        <Route exact path="/record-upload"/>
+        <Route exact path="/my-profile"/>
+      </Switch>
+    </Container>
   </Router>,
   document.getElementById('root')
 );
