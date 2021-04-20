@@ -4,22 +4,11 @@ import {Form, Button, Container, Divider, Header, Input} from 'semantic-ui-react
 
 const PhysicianSignup = () => {
   const req = {};
-  const setFirstName = (value) => { req.firstName = value; console.log(req.firstName); console.log(value)};
+  const setFirstName = (value) => { req.firstName = value; };
   const setLastName = (value) => { req.lastName = value; };
   const setNpi = (value) => { req.npi = value; };
   const setEmail = (value) => { req.email = value; };
   const setPassword = (value) => { req.password = value; };
-
-  const sendReq = () => fetch('/physician-signup', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(req)
-  })
-  .then((response) => {
-    localStorage.setItem('token', response.token);
-  });
 
   return (
     <Container>
