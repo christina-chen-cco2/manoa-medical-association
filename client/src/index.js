@@ -8,6 +8,8 @@ import Navbar from "./Navbar";
 import PhysicianSignup from "./PhysicianSignup";
 import RecordSearch from "./RecordSearch";
 import PhysicianRecordAccess from "./PhysicianRecordAccess"
+import PatientRecordUpload from "./PatientRecordUpload"
+import PhysicianRecordUpload from "./PhysicianRecordUpload";
 
 ReactDOM.render(
   <Router>
@@ -22,7 +24,8 @@ ReactDOM.render(
         <Route exact path="/record-search" component={RecordSearch}/>
         <Route exact path="/patient-record-access"/>
         <Route exact path="/physician-record-access" component={PhysicianRecordAccess}/>
-        <Route exact path="/record-upload"/>
+        <Route exact path="/patient-record-upload" component={PatientRecordUpload}/>
+        <Route exact path="/physician-record-upload" component={PhysicianRecordUpload}/>
         <Route exact path="/my-profile"/>
       </Switch>
     </Container>
