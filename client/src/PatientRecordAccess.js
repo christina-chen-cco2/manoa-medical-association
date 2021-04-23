@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import {Container, Header, Form, Menu, Table, TextArea, Divider, Button, Card, Input} from 'semantic-ui-react';
 
-const PhysicianRecordAccess = () => {
+const PatientRecordAccess = () => {
 
   const examPaneContent = (
     <Container style={{ overflowY: 'auto', paddingRight: '2%', height: '50vh' }}>
@@ -202,4 +202,4 @@ const PhysicianRecordAccess = () => {
   );
 }
 
-export default PhysicianRecordAccess;
+export default PatientRecordAccess;

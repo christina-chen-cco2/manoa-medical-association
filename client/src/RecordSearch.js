@@ -11,7 +11,7 @@ const RecordSearch = () => {
       for (let j = 1; j <= 3; j++) {
         row.push(
           <Grid.Column>
-            <Card raised as={Link} to='/record-access'>
+            <Card raised as={Link} to='/physician-record-access'>
               <Label corner='right' size='small'><Icon name='eye' /></Label>
               <Card.Content textAlign='center'>
                 <Card.Header>Person {3 * (i - 1 ) + j} Name</Card.Header>
