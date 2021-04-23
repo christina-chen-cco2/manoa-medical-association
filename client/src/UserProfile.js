@@ -46,6 +46,14 @@ const UserProfile = () => {
                         {email}
                     </Table.Cell>
                 </Table.Row>
+                <Table.Row>
+                    <Table.Cell>
+                        <Header as='h4'>Medical Record</Header>
+                    </Table.Cell>
+                    <Table.Cell textAlign='right'>
+                        {medicalRecord}
+                    </Table.Cell>
+                </Table.Row>
             </Table>
         </Container>
     );
