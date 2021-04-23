@@ -5,6 +5,7 @@ import 'semantic-ui-css/semantic.min.css';
 import { Container } from 'semantic-ui-react';
 import './index.css';
 import Navbar from "./Navbar";
+import Landing from './Landing';
 import PhysicianSignup from "./PhysicianSignup";
 import RecordSearch from "./RecordSearch";
 import PhysicianRecordAccess from "./PhysicianRecordAccess"
@@ -16,7 +17,7 @@ ReactDOM.render(
     <Navbar/>
     <Container style={{ width: '85vw' }}>
       <Switch>
-        <Route exact path="/"/>
+        <Route exact path="/" component={Landing}/>
         <Route exact path="/physician-signup" component={PhysicianSignup}/>
         <Route exact path="/patient-signup"/>
         <Route exact path="/physician-login"/>
