@@ -18,18 +18,8 @@ const Navbar = () => {
             <Dropdown.Item as={Link} to='/physician-signup' text='Physician'/>
           </Dropdown.Menu>
         </Dropdown>
-        <Dropdown simple item text='Login'>
-          <Dropdown.Menu>
-            <Dropdown.Item as={Link} to='/patient-login' text='Patient'/>
-            <Dropdown.Item as={Link} to='/physician-login' text='Physician'/>
-          </Dropdown.Menu>
-        </Dropdown>
-        <Dropdown simple item text='User Profile'>
-          <Dropdown.Menu>
-            <Dropdown.Item as={Link} to='/patient-profile' text='Patient'/>
-            <Dropdown.Item as={Link} to='/physician-profile' text='Physician'/>
-          </Dropdown.Menu>
-        </Dropdown>
+        <Menu.Item name='Login' as={Link} to='/login'/>
+        <Menu.Item name='Profile' as={Link} to='/my-profile'/>
         <Menu.Item name='Search Records' as={Link} to='/record-search'/>
         <Dropdown simple item text='Access Records'>
           <Dropdown.Menu>
