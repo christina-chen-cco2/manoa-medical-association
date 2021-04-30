@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Header, Table } from 'semantic-ui-react';
 
+
 const UserProfile = () => {
     return (
         <Container>
