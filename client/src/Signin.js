@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 
 
 class Signin extends React.Component {
@@ -8,14 +8,16 @@ class Signin extends React.Component {
   render() {
     const { from } = this.props.location.state || { from: { pathname: '/' } };
     // if correct authentication, redirect to page instead of login screen
-    if (this.state.redirectToReferer) {
+/*    if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
-    }
+    }*/
     // Otherwise return the Login form.
     const menuStyle = { paddingTop: '50px' };
     return (
         <div>
+{/*
           <NavBar/>
+*/}
           <div className='background1'>
             <Grid Container style={menuStyle}>
               <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
@@ -23,7 +25,8 @@ class Signin extends React.Component {
                   <Header as="h2" textAlign="center">
                     Login To Your Account
                   </Header>
-                  <Form onSubmit={this.handleSubmit}>
+                  <Form>
+                  {/*<Form onSubmit={this.handleSubmit}>*/}
                     <Segment stacked>
                       <Form.Input
                           label="Email"
@@ -32,7 +35,7 @@ class Signin extends React.Component {
                           name="email"
                           type="email"
                           placeholder="E-mail address"
-                          onChange={this.handleChange}
+                          /*onChange={this.handleChange}*/
                       />
                       <Form.Input
                           label="Password"
@@ -41,15 +44,16 @@ class Signin extends React.Component {
                           name="password"
                           placeholder="Password"
                           type="password"
-                          onChange={this.handleChange}
+                          /*onChange={this.handleChange}*/
                       />
                       <Form.Button content="Submit"/>
                     </Segment>
                   </Form>
                   <Message>
-                    <Link to="/patientsignup">Click here to Register</Link>
+                    {/*<Link to="/patientsignup">Click here to Register</Link>*/}
+                    <Button>Click here to Register</Button>
                   </Message>
-                  {this.state.error === '' ? (
+{/*                  {this.state.error === '' ? (
                       ''
                   ) : (
                       <Message
@@ -57,7 +61,7 @@ class Signin extends React.Component {
                           header="Login was not successful"
                           content={this.state.error}
                       />
-                  )}
+                  )}*/}
                 </Grid.Column>
               </Grid>
             </Grid>
@@ -66,6 +70,8 @@ class Signin extends React.Component {
     );
   }
 }
+
+export default Signin;
 
 /** Ensure that the React Router location object is available in case we need to redirect. */
 Signin.propTypes = {
