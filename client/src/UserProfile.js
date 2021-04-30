@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Header, Table, Input, Form, TextArea, Button } from 'semantic-ui-react';
 
 const UserProfile = () => {
