@@ -17,7 +17,7 @@ class Landing extends Component {
             </Message>
           </Grid.Row>
           <Grid.Row centered>
-            <Button color='green' animated='fade' size='big' as={Link} to='/patient-login'>
+            <Button color='green' animated='fade' size='big' as={Link} to='/login'>
               <Button.Content visible>
                 <Icon name='sign in' inverted size='large'/>
                 SIGN IN

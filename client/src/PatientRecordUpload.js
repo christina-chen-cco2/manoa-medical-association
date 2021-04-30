@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React,{Component} from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import {Header} from 'semantic-ui-react';
+import {Button, Container, Header} from 'semantic-ui-react';
 
 class PatientRecordUpload extends Component {
 
@@ -71,20 +71,19 @@ class PatientRecordUpload extends Component {
   render() {
 
     return (
-        <div>
-          <Header textAlign='center' as='h2'>Upload Patient Medical Record</Header>
-          <br></br>
-          <p>
-            Click on the "Browse" button to browse for medical record:
-          </p>
-          <div>
-            <input type="file" onChange={this.onFileChange} />
-            <button onClick={this.onFileUpload}>
-              Upload
-            </button>
-          </div>
-          {this.fileData()}
-        </div>
+      <Container textAlign='center'>
+        <Header textAlign='center' as='h2'>Upload Patient Medical Record</Header>
+        <br></br>
+        <p>
+          Click on the "Browse" button to browse for medical record:
+        </p>
+        <input type="file" style={{ color: 'gray', border: '1px solid gainsboro', borderRadius: '15px', padding: '15px' }} onChange={this.onFileChange} />
+        <br/><br/>
+        <Button onClick={this.onFileUpload}>
+          Upload
+        </Button>
+        {this.fileData()}
+      </Container>
     );
   }
 }
