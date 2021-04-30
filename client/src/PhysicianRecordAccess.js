@@ -1,38 +1,11 @@
 import React, { useState } from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import {Container, Header, Form, Menu, Table, TextArea, Divider, Button, Card, Input} from 'semantic-ui-react';
+import {Container, Header, Menu, Table, Divider, Button, Card, Input} from 'semantic-ui-react';
 
 const PhysicianRecordAccess = () => {
 
-  const examPaneContent = (
+  const pastExamPaneContent = (
     <Container style={{ overflowY: 'auto', paddingRight: '2%', height: '50vh' }}>
-      <Header as='h2' textAlign='center'>Upcoming Examinations</Header>
-      <Card raised fluid style={{ marginBottom: '3%' }}>
-        <Table striped>
-          <Table.Row>
-            <Table.Cell>
-              <Header as='h4'>Date to Conduct</Header>
-            </Table.Cell>
-            <Table.Cell textAlign='right'>
-              December 09, 1987
-            </Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>
-              <Header as='h4'>Reason</Header>
-            </Table.Cell>
-            <Table.Cell textAlign='right'>
-              Runny Nose
-            </Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell colSpan='2'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </Table.Cell>
-          </Table.Row>
-        </Table>
-      </Card>
-      <Divider hidden section/>
       <Header as='h2' textAlign='center'>Past Examinations</Header>
       <Card raised fluid style={{ marginBottom: '3%' }}>
         <Table striped>
@@ -87,8 +60,42 @@ const PhysicianRecordAccess = () => {
     </Container>
   );
 
+  const upcomingExamPaneContent = (
+    <Container style={{ overflowY: 'auto', paddingRight: '2%', height: '50vh' }}>
+      <Header as='h2' textAlign='center'>Upcoming Examinations</Header>
+      <Card raised fluid style={{ marginBottom: '3%' }}>
+        <Table striped>
+          <Table.Row>
+            <Table.Cell>
+              <Header as='h4'>Date to Conduct</Header>
+            </Table.Cell>
+            <Table.Cell textAlign='right'>
+              December 09, 1987
+            </Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>
+              <Header as='h4'>Reason</Header>
+            </Table.Cell>
+            <Table.Cell textAlign='right'>
+              Runny Nose
+            </Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell colSpan='2'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </Table.Cell>
+          </Table.Row>
+        </Table>
+      </Card>
+    </Container>
+  );
+
   const [activeTab, setActiveTab] = useState('Examinations');
-  const [activePane, setActivePane] = useState(examPaneContent);
+  const [activePane, setActivePane] = useState(upcomingExamPaneContent);
+
+  const [subItemLabel, setSubItemLabel] = useState('Upcoming Examinations');
+  const [subItemActive, setSubItemActive] = useState(true);
 
   const [ssn, setSSN] = useState('123-45-6789');
   const [dob, setDOB] = useState('01/01/2021');
@@ -105,16 +112,36 @@ const PhysicianRecordAccess = () => {
 
   const setActiveItem = (tabName) => {
     setActiveTab(tabName);
+    setSubItemLabel('');
+    if (tabName === 'Examinations') {
+      setActiveSubItem('Examinations');
+    } else if (tabName === 'Vaccinations') {
+
+    } else if (tabName === 'Notes') {
+
+    }
+    setActiveSubItem('Examinations');
+  };
+
+  const setActiveSubItem = (tabName) => {
     let paneContent;
     if (tabName === 'Examinations') {
-      paneContent = examPaneContent;
+      if (subItemLabel === 'Upcoming Examinations') {
+        setSubItemLabel('Past Examinations');
+        setSubItemActive(false);
+        paneContent = pastExamPaneContent;
+      } else {
+        setSubItemLabel('Upcoming Examinations');
+        setSubItemActive(true);
+        paneContent = upcomingExamPaneContent;
+      }
     } else if (tabName === 'Vaccinations') {
 
     } else if (tabName === 'Notes') {
 
     }
     setActivePane(paneContent);
-  };
+  }
 
   const setProfileEdit = () => {
     if (profileEditButton === 'Edit') {
@@ -197,6 +224,7 @@ const PhysicianRecordAccess = () => {
           onClick={(event, data) => setActiveItem(data.name)}/>
       </Menu>
       <br/>
+      <Button toggle active={subItemActive} onClick={() => setActiveSubItem(activeTab)}>{subItemLabel}</Button>
       {activePane}
     </Container>
   );

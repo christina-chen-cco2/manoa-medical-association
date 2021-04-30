@@ -51,7 +51,7 @@ class Signin extends React.Component {
                   </Form>
                   <Message>
                     {/*<Link to="/patientsignup">Click here to Register</Link>*/}
-                    <Button>Click here to Register</Button>
+                    <Button>Click here to Signup</Button>
                   </Message>
 {/*                  {this.state.error === '' ? (
                       ''

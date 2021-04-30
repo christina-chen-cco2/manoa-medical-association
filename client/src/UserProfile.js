@@ -1,7 +1,5 @@
-import React, {useState} from 'react';
-import 'semantic-ui-css/semantic.min.css';
-import {Container, Header, Table, Input, Form, Button} from 'semantic-ui-react';
-
+import React from 'react';
+import { Container, Header, Table, Input, Form, TextArea } from 'semantic-ui-react';
 
 const UserProfile = () => {
     const [activeTab, setActiveTab] = useState('User Profile');
@@ -47,7 +45,7 @@ const UserProfile = () => {
                         <Header as='h4'>Social Security Number</Header>
                     </Table.Cell>
                     <Table.Cell textAlign='right'>
-                        <Input placeholder='Social Security Number'/>
+                        <Input fluid placeholder='Social Security Number'/>
                     </Table.Cell>
                 </Table.Row>
                 <Table.Row>
@@ -55,7 +53,7 @@ const UserProfile = () => {
                         <Header as='h4'>Date of Birth</Header>
                     </Table.Cell>
                     <Table.Cell textAlign='right'>
-                        <Input placeholder='Date of Birth'/>
+                        <Input fluid placeholder='Date of Birth'/>
                     </Table.Cell>
                 </Table.Row>
                 <Table.Row>
@@ -63,7 +61,7 @@ const UserProfile = () => {
                         <Header as='h4'>Address</Header>
                     </Table.Cell>
                     <Table.Cell textAlign='right'>
-                        <Input placeholder='Address'/>
+                        <Input fluid placeholder='Address'/>
                     </Table.Cell>
                 </Table.Row>
                 <Table.Row>
@@ -71,7 +69,7 @@ const UserProfile = () => {
                         <Header as='h4'>Insurance ID</Header>
                     </Table.Cell>
                     <Table.Cell textAlign='right'>
-                        <Input placeholder='Insurance ID'/>
+                        <Input fluid placeholder='Insurance ID'/>
                     </Table.Cell>
                 </Table.Row>
                 <Table.Row>
@@ -79,7 +77,7 @@ const UserProfile = () => {
                         <Header as='h4'>Email Address</Header>
                     </Table.Cell>
                     <Table.Cell textAlign='right'>
-                        <Input placeholder='Email Address'/>
+                        <Input fluid placeholder='Email Address'/>
                     </Table.Cell>
                 </Table.Row>
                 <Table.Row>
@@ -87,7 +85,7 @@ const UserProfile = () => {
                         <Header as='h4'>Medical Record</Header>
                     </Table.Cell>
                     <Table.Cell textAlign='right'>
-                        <Form><Input placeholder='Medical Record'/></Form>
+                        <Form><TextArea placeholder='Medical Record'/></Form>
                     </Table.Cell>
                 </Table.Row>
             </Table>
