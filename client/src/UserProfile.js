@@ -5,7 +5,7 @@ const UserProfile = () => {
 
     return (
         <Container>
-            <Header as='h2' textAlign='center'>Person 1 Name</Header>
+            <Header as='h2' textAlign='center'>Name</Header>
             <Table striped compact>
                 <Table.Row>
                     <Table.Cell>
