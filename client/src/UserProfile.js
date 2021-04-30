@@ -55,8 +55,8 @@ const UserProfile = () => {
                         <Form><TextArea placeholder='Medical Record'/></Form>
                     </Table.Cell>
                 </Table.Row>
-                <Button content="Save"/>
             </Table>
+            <Button content="Save"/>
         </Container>
     );
 }
