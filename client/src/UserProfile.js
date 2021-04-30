@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Header, Table, Input, Form, TextArea } from 'semantic-ui-react';
+import { Container, Header, Table, Input, Form, TextArea, Button } from 'semantic-ui-react';
 
 const UserProfile = () => {
     const [activeTab, setActiveTab] = useState('User Profile');
