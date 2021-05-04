@@ -1,16 +1,16 @@
 import React,{Component} from 'react';
 import { Grid, Image, Button, Icon, Modal } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import 'semantic-ui-css/semantic.css';
 
 class Landing extends Component {
 
   render() {
 
     return (
+        <div className='background'>
         <Grid container rows='4'>
           <Grid.Row centered>
-            <Image size='big' centered src='/images/logo.PNG' />
+            <Image size='big' centered src='/images/logo.png' />
           </Grid.Row>
           <Grid.Row centered>
             <Button color='green' animated='fade' size='big' as={Link} to='/login'>
@@ -45,6 +45,7 @@ class Landing extends Component {
             </Modal>
           </Grid.Row>
         </Grid>
+        </div>
     );
   }
 }
