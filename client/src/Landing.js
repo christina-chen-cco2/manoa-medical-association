@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { Grid, Image, Button, Icon, Modal, Card } from 'semantic-ui-react';
+import { Grid, Button, Icon, Modal, Card, Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 class Landing extends Component {
@@ -29,7 +29,7 @@ class Landing extends Component {
               <Card>
             <Button color='blue' animated='fade' size='big' as={Link} to='/patient-signup'>
               <Button.Content visible>
-                <Icon name='add user' color='white' size='large'/>
+                <Icon name='add user' size='large'/>
                 SIGN UP
               </Button.Content>
               <Button.Content hidden>CLICK TO SIGN UP</Button.Content>
@@ -43,7 +43,7 @@ class Landing extends Component {
             <Modal trigger={
               <Button color='purple' animated='fade' size='big'>
                 <Button.Content visible>
-                  <Icon name='id badge outline' color='white' size='big'/>
+                  <Icon name='id badge outline'  size='big'/>
                   ABOUT THE APP
                 </Button.Content>
                 <Button.Content hidden >CLICK TO LEARN MORE ABOUT THE APP</Button.Content>
