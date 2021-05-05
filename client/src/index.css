@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("./bg.png");
+  background-size: cover;
 }
 
 code {
@@ -13,6 +14,6 @@ code {
     monospace;
 }
 
-html {
-  scroll-behavior: smooth;
+.button {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
