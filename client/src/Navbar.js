@@ -7,9 +7,9 @@ const Navbar = () => {
 
   return (
     <Container fluid style={{ paddingBottom: '5vh' }}>
-      <Container attached='top' fluid style={{ backgroundColor: 'black' }}>
+      <Container attached='top' fluid>
         <Message>
-       <Header textAlign='centered'><Icon name='heartbeat' color='red'/>Communicate With Medical Professionals Remotely & View Your Medical Information From Anywhere and Anytime</Header>
+       <Header textAlign='centered'><Icon name='heartbeat' color='red'/>View Your Medical Information From Anywhere and Anytime</Header>
         </Message>
         </Container>
         <div className='shadow'>
