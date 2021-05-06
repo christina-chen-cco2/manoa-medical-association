@@ -12,7 +12,7 @@ class Landing extends Component {
             <Image size='big' centered src='/images/logo.png' />
           </Grid.Row>
           <Grid.Row centered>
-            <div className='button'>
+            <div className='shadow'>
               <Card>
             <Button color='green' animated='fade' size='big' as={Link} to='/login'>
               <Button.Content visible>
@@ -25,7 +25,7 @@ class Landing extends Component {
             </div>
           </Grid.Row>
           <Grid.Row centered>
-            <div className='button'>
+            <div className='shadow'>
               <Card>
             <Button color='blue' animated='fade' size='big' as={Link} to='/patient-signup'>
               <Button.Content visible>
@@ -38,7 +38,7 @@ class Landing extends Component {
             </div>
           </Grid.Row>
           <Grid.Row centered>
-            <div className='button'>
+            <div className='shadow'>
               <Card>
             <Modal trigger={
               <Button color='purple' animated='fade' size='big'>

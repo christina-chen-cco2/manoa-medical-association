@@ -1,16 +1,19 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import { Menu, Dropdown, Container } from 'semantic-ui-react';
+import { Menu, Dropdown, Container, Icon, Header, Message } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
   return (
     <Container fluid style={{ paddingBottom: '5vh' }}>
-      <Container attached='top' fluid style={{ height: '10vh', backgroundColor: 'cyan' }}>
-        header, picture, or something
-      </Container>
-      <Menu borderless attached='bottom' size='large'>
+      <Container attached='top' fluid style={{ backgroundColor: 'black' }}>
+        <Message>
+       <Header textAlign='centered'><Icon name='heartbeat' color='red'/>Communicate With Medical Professionals Remotely & View Your Medical Information From Anywhere and Anytime</Header>
+        </Message>
+        </Container>
+        <div className='shadow'>
+      <Menu borderless inverted widths={7} attached='bottom' size='large'>
         <Menu.Item name='Home' as={Link} to='/' position='right'/>
         <Dropdown simple item text='Signup'>
           <Dropdown.Menu>
@@ -34,6 +37,7 @@ const Navbar = () => {
           </Dropdown.Menu>
         </Dropdown>
       </Menu>
+      </div>
     </Container>
   );
 }
