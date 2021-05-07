@@ -1,15 +1,22 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import { Form, Button, Container, Divider, Header, Input } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 const PatientSignup = () => {
-  const req = {};
-  const setFirstName = (value) => { req.firstName = value; };
-  const setLastName = (value) => { req.lastName = value; };
-  const setInsuranceID = (value) => {req.insuranceID = value};
-  const setPhonenumber = (value) => {req.phonenumber = value};
-  const setEmail = (value) => { req.email = value; };
-  const setPassword = (value) => { req.password = value; };
+  const req = {}, setFirstName = (value) => {
+    req.firstName = value;
+  }, setLastName = (value) => {
+    req.lastName = value;
+  }, setInsuranceID = (value) => {
+    req.insuranceID = value
+  }, setPhonenumber = (value) => {
+    req.phonenumber = value
+  }, setEmail = (value) => {
+    req.email = value;
+  }, setPassword = (value) => {
+    req.password = value;
+  };
 
   return (
       <Container>
@@ -41,7 +48,7 @@ const PatientSignup = () => {
               <label>Create Password</label>
               <Input placeholder='Password' onChange={(event, data) => setPassword(data.value)}/>
             </Form.Field>
-            <Button floated='right' type='submit' fluid onClick='' style={{ marginTop: '2vh' }}>Create Account</Button>
+            <Button floated='right' type='submit' fluid as={Link} to='/my-profile' style={{ marginTop: '2vh' }}>Create Account</Button>
           </Form>
         </Container>
       </Container>

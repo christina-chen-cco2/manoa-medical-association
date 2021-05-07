@@ -9,12 +9,12 @@ const Navbar = () => {
     <Container fluid style={{ paddingBottom: '5vh' }}>
       <Container attached='top' fluid>
         <Message>
-       <Header textAlign='centered'><Icon name='heartbeat' color='red'/>View Your Medical Information From Anywhere and Anytime</Header>
+       <Header textAlign='center'><Icon name='heartbeat' color='red'/>View Your Medical Information From Anywhere and Anytime</Header>
         </Message>
         </Container>
         <div className='shadow'>
       <Menu borderless inverted widths={7} attached='bottom' size='large'>
-        <Menu.Item name='Home' as={Link} to='/' position='right'/>
+        <Menu.Item name='Home' as={Link} to='/' />
         <Dropdown simple item text='Signup'>
           <Dropdown.Menu>
             <Dropdown.Item as={Link} to='/patient-signup' text='Patient'/>

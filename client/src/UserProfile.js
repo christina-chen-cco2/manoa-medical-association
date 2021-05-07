@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, Header, Table, Input, Form, TextArea, Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 const UserProfile = () => {
 
@@ -56,7 +57,7 @@ const UserProfile = () => {
                     </Table.Cell>
                 </Table.Row>
             </Table>
-            <Button content="Save"/>
+            <Button content="Save" as={Link} to='/'/>
         </Container>
     );
 }

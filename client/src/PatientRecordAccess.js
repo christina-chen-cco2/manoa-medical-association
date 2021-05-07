@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import {Container, Header, Form, Menu, Table, TextArea, Divider, Button, Card, Input} from 'semantic-ui-react';
+import {Container, Header, Menu, Table, Divider, Button, Card, Input} from 'semantic-ui-react';
 
 const PatientRecordAccess = () => {
 

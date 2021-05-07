@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
-
+import { Link } from 'react-router-dom';
 
 class Signin extends React.Component {
   /** Render the signin form. */
@@ -46,12 +46,12 @@ class Signin extends React.Component {
                           type="password"
                           /*onChange={this.handleChange}*/
                       />
-                      <Form.Button content="Submit"/>
+                      <Form.Button content="Submit" as={Link} to='/my-profile'/>
                     </Segment>
                   </Form>
                   <Message>
                     {/*<Link to="/patientsignup">Click here to Register</Link>*/}
-                    <Button>Click here to Signup</Button>
+                    <Button as={Link} to='/patient-signup'>Click here to Signup</Button>
                   </Message>
 {/*                  {this.state.error === '' ? (
                       ''
