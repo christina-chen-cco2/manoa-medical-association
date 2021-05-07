@@ -13,7 +13,7 @@ const Navbar = () => {
         </Message>
         </Container>
         <div className='shadow'>
-      <Menu borderless inverted widths={7} attached='bottom' size='large'>
+      <Menu borderless inverted widths={8} attached='bottom' size='large'>
         <Menu.Item name='Home' as={Link} to='/' />
         <Dropdown simple item text='Signup'>
           <Dropdown.Menu>
@@ -36,6 +36,7 @@ const Navbar = () => {
             <Dropdown.Item as={Link} to='/physician-record-upload' text='Physician'/>
           </Dropdown.Menu>
         </Dropdown>
+        <Menu.Item name='Logout' as={Link} to='/'/>
       </Menu>
       </div>
     </Container>
